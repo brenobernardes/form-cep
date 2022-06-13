@@ -3,3 +3,23 @@ $primary-color: rgba(0, 0, 0, 0.116);
 .mainForm {
     background-color: $primary-color;
 }
+
+.mainForm Form {
+    display: grid;
+    grid-template-columns: 5% 45% 45% 5%;
+    grid-template-rows: 10%;
+}
+
+.infoGroup {
+    grid-column-start: 2;
+}
+
+.addressGroup {
+    grid-column-start: 3;
+}
+
+.descriptionGroup {
+    grid-row-start: 15;
+    grid-column-start: 2;
+    grid-column-end: 3;
+}
