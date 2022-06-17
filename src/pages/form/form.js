@@ -22,6 +22,24 @@ export default function Forms () {
         }
     });
 
+    // Validar CPF
+
+    const [cpf, setCpf] = useState ('');
+
+    const validateCpf = e => {
+        const limit = 11;
+        setCpf(e.target.value.slice(0, limit));
+    }
+
+    // Validação Telefone
+
+    const [phone, setPhone] = useState();
+
+    const validatePhone = e => {
+        const limit = 11;
+        setPhone(e.target.value.slice(0, limit));
+    }
+
     // Validação do email
 
     const [email, setEmail] = useState();
@@ -53,10 +71,10 @@ export default function Forms () {
                     <Form.Control type="date" placeholder="Data de Nascimento" />
 
                     <Form.Label>CPF</Form.Label>
-                    <Form.Control type="number" placeholder="CPF" maxLength={11} />
+                    <Form.Control type="number" placeholder="CPF" value={cpf} onChange={validateCpf} />
 
                     <Form.Label>Telefone</Form.Label>
-                    <Form.Control type="number" placeholder="(31)12345-6789" />
+                    <Form.Control type="number" placeholder="(31)12345-6789" value={phone} onChange={validatePhone} />
 
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="email" placeholder="Email" onChange={validateEmail} />
