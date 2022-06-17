@@ -53,7 +53,7 @@ export default function Forms () {
                     <Form.Control type="date" placeholder="Data de Nascimento" />
 
                     <Form.Label>CPF</Form.Label>
-                    <Form.Control type="number" placeholder="CPF" />
+                    <Form.Control type="number" placeholder="CPF" maxLength={11} />
 
                     <Form.Label>Telefone</Form.Label>
                     <Form.Control type="number" placeholder="(31)12345-6789" />
@@ -90,8 +90,7 @@ export default function Forms () {
 
                 <Form.Group className="descriptionGroup" controlId="formBasicPassword">
                     <Form.Label>Descrição</Form.Label>
-                    <Form.Control type="text" placeholder="Bio" />
-                    <Form.Text></Form.Text>
+                    <Form.Control type="text" className="formText" />
                 </Form.Group>
 
                 <Button type="submit">Enviar</Button>

@@ -2,24 +2,39 @@ $primary-color: rgba(0, 0, 0, 0.116);
 
 .mainForm {
     background-color: $primary-color;
+    padding-top: 20px;
 }
 
 .mainForm Form {
     display: grid;
-    grid-template-columns: 5% 45% 45% 5%;
+    grid-template-columns: 5% 42.5% 5% 42.5% 5%;
     grid-template-rows: 10%;
 }
 
 .infoGroup {
     grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 8;
 }
 
 .addressGroup {
-    grid-column-start: 3;
+    grid-column-start: 4;
+    grid-row-start: 1;
+    grid-row-end: 8;
 }
 
 .descriptionGroup {
-    grid-row-start: 15;
+    grid-row-start: 9;
     grid-column-start: 2;
-    grid-column-end: 3;
+    grid-column-end: 5;
+}
+
+.formText {
+    height: 200px;
+}
+
+.mainForm Button {
+    margin-top: 20px;
+    grid-column-start: 3;
+    grid-row-start: 10;
 }
