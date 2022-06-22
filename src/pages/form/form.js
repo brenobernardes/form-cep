@@ -27,8 +27,13 @@ export default function Forms () {
     const [cpf, setCpf] = useState ('');
 
     const validateCpf = e => {
-        const limit = 11;
-        setCpf(e.target.value.slice(0, limit));
+        const regexCpf = /^([0-9]{3})([0-9]{3})([0-9]{3})([0-9]{2})$/;
+        const cpfLimit = 11;
+
+        var str = e.target.value.replace(/[^0-9]/g, "").slice(0, cpfLimit)
+        const resultLimit = str.replace(regexCpf, "$1.$2.$3-$4");
+        
+        setCpf(resultLimit);
     }
 
     // Validação Telefone
@@ -36,8 +41,13 @@ export default function Forms () {
     const [phone, setPhone] = useState();
 
     const validatePhone = e => {
+        const regexPhone = /^([0-9]{2})([0-9]{4,5})([0-9]{4})$/;
         const limit = 11;
-        setPhone(e.target.value.slice(0, limit));
+
+        var str = e.target.value.replace(/[^0-9]/g, "").slice(0, limit)
+        const result = str.replace(regexPhone, "($1)$2-$3");
+        
+        setPhone(result);
     }
 
     // Validação do email
@@ -71,10 +81,10 @@ export default function Forms () {
                     <Form.Control type="date" placeholder="Data de Nascimento" />
 
                     <Form.Label>CPF</Form.Label>
-                    <Form.Control type="number" placeholder="CPF" value={cpf} onChange={validateCpf} />
+                    <Form.Control type="text" placeholder="CPF" value={cpf} onChange={validateCpf} />
 
                     <Form.Label>Telefone</Form.Label>
-                    <Form.Control type="number" placeholder="(31)12345-6789" value={phone} onChange={validatePhone} />
+                    <Form.Control type="text" placeholder="(31)12345-6789" value={phone} onChange={validatePhone} />
 
                     <Form.Label>Email</Form.Label>
                     <Form.Control type="email" placeholder="Email" onChange={validateEmail} />
