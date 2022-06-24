@@ -61,10 +61,8 @@ export default function Forms () {
 
         if (emailIsValid.test(email)) {
             emailReturn.current = "Email válido";
-            console.log("email valido")
         } else {
             emailReturn.current = "Email inválido";
-            console.log("email invalido")
         }
     }
 
